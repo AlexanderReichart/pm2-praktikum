@@ -1,10 +1,10 @@
 package reise;
 
-import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Klasse für eine Station einer Reise.
+ * Klasse fï¿½r eine Station einer Reise.
  *
  * Group: ARGH
  *
@@ -17,19 +17,19 @@ public class Station {
 	 */
 	private final String ort;
 	/**
-	 * Anreisezeitpunkt (OffsetDateTime um Reisen über mehrere Zeitzonen einfach
-	 * zu ermöglichen).
+	 * Anreisezeitpunkt (ZonedDateTime um Reisen ï¿½ber mehrere Zeitzonen einfach
+	 * zu ermï¿½glichen).
 	 */
-	private final OffsetDateTime anreise;
+	private final ZonedDateTime anreise;
 	/**
-	 * Abreisezeitpunkt (OffsetDateTime um Reisen über mehrere Zeitzonen einfach
-	 * zu ermöglichen).
+	 * Abreisezeitpunkt (ZonedDateTime um Reisen ï¿½ber mehrere Zeitzonen einfach
+	 * zu ermï¿½glichen).
 	 */
-	private final OffsetDateTime abreise;
+	private final ZonedDateTime abreise;
 
 	/**
-	 * Erstellt eine Neue Station aus den angegebenen Werten. Für Anreise oder
-	 * Abreise darf für den Startpunkt oder das Ziel der Reise <code>null</code>
+	 * Erstellt eine Neue Station aus den angegebenen Werten. Fï¿½r Anreise oder
+	 * Abreise darf fï¿½r den Startpunkt oder das Ziel der Reise <code>null</code>
 	 * gesetzt werden.
 	 *
 	 * @param ort
@@ -39,32 +39,32 @@ public class Station {
 	 * @param abreise
 	 *            Zeitpunkt der Abreise.
 	 */
-	public Station(final String ort, final OffsetDateTime anreise, final OffsetDateTime abreise) {
+	public Station(final String ort, final ZonedDateTime anreise, final ZonedDateTime abreise) {
 		this.ort = ort;
 		this.anreise = anreise;
 		this.abreise = abreise;
 	}
 
 	/**
-	 * Gibt den Zeitpunkt der Abreise zurück.
+	 * Gibt den Zeitpunkt der Abreise zurï¿½ck.
 	 *
 	 * @return Zeitpunkt der Abreise.
 	 */
-	public OffsetDateTime getAbreise() {
+	public ZonedDateTime getAbreise() {
 		return this.abreise;
 	}
 
 	/**
-	 * Gibt den Zeitpunkt der Anreise zurück.
+	 * Gibt den Zeitpunkt der Anreise zurï¿½ck.
 	 *
 	 * @return Zeitpunkt der Anreise.
 	 */
-	public OffsetDateTime getAnreise() {
+	public ZonedDateTime getAnreise() {
 		return this.anreise;
 	}
 
 	/**
-	 * Gibt den Ortsnamen zurück.
+	 * Gibt den Ortsnamen zurï¿½ck.
 	 *
 	 * @return Ortsnamen.
 	 */
@@ -73,7 +73,7 @@ public class Station {
 	}
 
 	/**
-	 * Gibt eine kurze Ãœbersicht über diese Station zurück.
+	 * Gibt eine kurze Ãœbersicht ï¿½ber diese Station zurï¿½ck.
 	 */
 	@Override
 	public String toString() {
@@ -83,11 +83,11 @@ public class Station {
 	}
 
 	/**
-	 * Fügt den Ãœbersichtstext für diese Reise zu dem übergebenen StringBuilder
+	 * Fï¿½gt den Ãœbersichtstext fï¿½r diese Reise zu dem ï¿½bergebenen StringBuilder
 	 * hinzu.
 	 *
 	 * @param builder
-	 *            StringBuilder in den der Text eingefügt werden soll.
+	 *            StringBuilder in den der Text eingefï¿½gt werden soll.
 	 */
 	void addUbersichtText(final StringBuilder builder) {
 		builder.append(this.ort);

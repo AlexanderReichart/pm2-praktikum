@@ -1,9 +1,11 @@
 package reise;
 
-import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Klasse für eine Reise.
@@ -30,6 +32,17 @@ public class Reise {
 	 */
 	public Reise(final Station startpunkt) {
 		this.fuegeAnsEndeHinzu(startpunkt);
+	}
+
+	/**
+	 * Entfernt die Station mit dem angegebenen Index aus der Reise.
+	 *
+	 * @param index
+	 *            Index der Station, die entfernt werden soll.
+	 * @return Die entfernte Station.
+	 */
+	public Station entferneStation(final int index) {
+		return this.stationen.remove(index);
 	}
 
 	/**
@@ -94,6 +107,10 @@ public class Reise {
 		return this.stationen.size();
 	}
 
+	public long getDauerInStunden() {
+		return ChronoUnit.HOURS.between(this.getStartzeitpunkt(), this.getEndzeitpunkt());
+	}
+
 	/**
 	 * Gibt die Dauer der Reise in Tagen (Abreise Zeitpunkt am Startpunkt bis
 	 * Anreisezeitpunkt am Ziel) zurück.
@@ -103,10 +120,6 @@ public class Reise {
 	public long getDauerInTagen() {
 		return ChronoUnit.DAYS.between(this.getStartzeitpunkt(), this.getEndzeitpunkt());
 	}
-	
-	public long getDauerInStunden() {
-		return ChronoUnit.HOURS.between(this.getStartzeitpunkt(), this.getEndzeitpunkt());
-	}
 
 	/**
 	 * Gibt den Zeitpunkt zurück an dem die Reise vorbei ist (Anreisezeitpunkt
@@ -114,9 +127,9 @@ public class Reise {
 	 *
 	 * @return Endzeitpunkt der Reise.
 	 */
-	public OffsetDateTime getEndzeitpunkt() {
-//		final Station endpunkt = this.getStartpunkt(); 
-		final Station endpunkt = stationen.getLast();
+	public ZonedDateTime getEndzeitpunkt() {
+		// final Station endpunkt = this.getStartpunkt();
+		final Station endpunkt = this.stationen.getLast();
 		if (endpunkt != null) {
 			return endpunkt.getAnreise();
 		}
@@ -138,7 +151,7 @@ public class Reise {
 	 *
 	 * @return Startzeitpunkt der Reise.
 	 */
-	public OffsetDateTime getStartzeitpunkt() {
+	public ZonedDateTime getStartzeitpunkt() {
 		final Station startpunkt = this.getStartpunkt();
 		if (startpunkt != null) {
 			return startpunkt.getAbreise();
@@ -155,6 +168,16 @@ public class Reise {
 	 */
 	public Station getStation(final int index) {
 		return this.stationen.get(index);
+	}
+
+	/**
+	 * Gibt eine Liste mit allen Stationen zurück. Die zurückgegebene Liste kann
+	 * nicht modifiziert werden.
+	 *
+	 * @return Liste mit allen Stationen.
+	 */
+	public List<Station> getStationen() {
+		return Collections.unmodifiableList(this.stationen);
 	}
 
 	/**
