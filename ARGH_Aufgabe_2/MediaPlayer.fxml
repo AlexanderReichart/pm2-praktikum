@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <SplitPane dividerPositions="0.23753280839895013" prefHeight="299.0" prefWidth="764.0" BorderPane.alignment="CENTER">
+         <items>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Pane prefHeight="28.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="14.0" layoutY="6.0" style="-fx-font-weight: bold;" text="Alle Titel" />
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <BorderPane>
+                     <center>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                           <content>
+                              <ListView />
+                           </content>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn prefWidth="366.0" text="Titel" />
+                      <TableColumn prefWidth="103.0" text="Album" />
+                        <TableColumn minWidth="0.0" prefWidth="107.0" text="Interpret" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="764.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="60.0" prefWidth="349.0">
+               <children>
+                  <BorderPane>
+                     <center>
+                        <Label style="-fx-font-weight: bold;" text="Titel des Aktuellen Songs">
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </center>
+                  </BorderPane>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10px;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-pref-width: 70px;" text="Zurück" />
+                        <Button mnemonicParsing="false" style="-fx-pref-width: 70px;" text="Play" />
+                        <Button mnemonicParsing="false" style="-fx-pref-width: 70px;" text="Vor" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

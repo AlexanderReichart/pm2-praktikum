@@ -1,0 +1,51 @@
+Oberfläche (HIC, Human Interaction Component)
+
+	- Titelliste
+	- Liste von Playlists
+	- Detailansicht der Titel
+	- Steuerungselemente für den Player
+
+Anwendungslogic (PDC, Problem Domain Component)
+
+	- Player (Abspielen der Titel)
+	- Hinzufügen / Entfernen von Titeln
+	- Verwalten von Playlists
+		-> Erstellen / Löschen
+		-> Umbenennen
+		-> Titel hinzufügen / entfernen
+	- Einlesen von Meta-Informationen
+
+Speicherung / I/O (DMC, Datamanagement Component)
+
+	- Speicherformat: SQLite
+		-> Alle Titel (mit meta Daten für bessere Performance)
+		-> Alle Playlists
+		-> Zuordnung von Titeln zu Playlists
+
+Welchen Klassen und Methoden können Sie für Medienformate verwenden?
+
+	JAVE: http://www.sauronsoftware.it/projects/jave/
+		nutzt das FFmpeg Projekt: https://ffmpeg.org/
+	
+Welche Eigenschaften von Mediendateien außer der Wiedergabe wollen Sie anzeigen?
+
+	- Titel
+	- Interpret(en)
+	- Album
+	- Länge des Titels
+
+Welche Eigeneschaften wollen Sie anzeigen?
+
+	- Cover
+	- Interpret
+	- Album
+	- Datum der Veröffentlichung
+	- Tonstudio / "Plattenfirma"
+	- Genre
+
+Wie soll die Speicherung erfolgen?
+
+	- SQLite Datenbank für:
+		-> Alle Titel (mit wichtigsten Meta Informationen für bessere Performance)
+		-> Playlists
+		-> Zuordnung von Titeln zu Playlists

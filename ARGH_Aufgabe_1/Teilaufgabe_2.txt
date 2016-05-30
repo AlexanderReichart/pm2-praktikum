@@ -1,0 +1,48 @@
+Welche Medienformate sollen unterstützt werden?
+
+	- WAV/WAVE
+	- MP3
+	- (Evtl weitere Formate aus dem FFmpeg Projekt
+		-> https://ffmpeg.org/ffmpeg-codecs.html
+		-> http://www.sauronsoftware.it/projects/jave/
+
+Welche Eigenschaften haben Mediendateien außer dem Format?
+
+	Meta-Informationen über den Inhalt:
+		- Interpret(en)
+		- Album
+		- Datum der Veröffentlichung
+		- evtl. Bild mit Album-Cover
+		- Genre
+		- Studio / "Plattenfirma"
+
+Was soll die Anzeige bieten?
+
+	- Liste mit wichtigsten Details (Titel, Album, Interpret)
+	- Suchfunktion um Liste nach z.B. Genre zu filtern
+	- Detailansicht für ausgewählten Track (Zeigt Cover und weitere vorhandene
+		Meta-Informationen)
+
+Welche Bedienung soll der Player haben?
+
+	- Einfaches abspielen des ausgewählten Titels
+	- Abspielen der aktuellen Titleliste / Auswahl (evtl. mit Shuffel Funktion)
+		-> Mit vor- und zurück-springen
+	- Verwalten von Playlists
+
+Welche Import- oder Export-Funktionen werden benötigt?
+
+	- Hinzufügen von unterstützten Mediendateien in die Titelliste
+		-> Datei wird nur in spezifizierten Medienortner kopiert, wenn vom User
+			erwünscht.
+	- Fokus auf Abspielen der Dateien, Änderungen (an z.B. Meta-Informationen)
+		stehen nicht im Vordergrund.
+
+ Wie wird so ein Media-Player komfortabel bedient?
+ 	
+ 	- Hinzufügen von Dateien über Drag-'n'-Drop aus Dateimananger.
+ 	- Wichtigste Bedienelemente über Hotkeys erreichbar
+ 		(Play / Pause, vor- & zurückspringen)
+ 	- Übersichtliches Userinterface
+ 		-> Titleliste und Playlists direkt sichtbar
+ 		-> Zusätzliche Features mit möglichst wenigen Klicks erreichbar
